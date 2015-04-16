@@ -7,6 +7,6 @@ $app->get('/', function () use ($app) {
 
 	// $testDb = App\Models\Test::all();
 
-    $app->render('home.php', $data);
+	$app->render('home.php', $data);
 
 });
