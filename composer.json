@@ -1,5 +1,19 @@
 {
+    "name": "dieg0v/sliminit",
+    "description": "Simple slim app for rapid propotype",
+    "keywords": ["slim", "php"],
+    "homepage": "https://github.com/dieg0v/sliminit",
+    "license": "MIT",
+    "authors": [
+        {
+        "name": "Diego Vilariño",
+        "email": "diego.vilarino@gmail.com",
+        "homepage": "http://www.dieg0v.com",
+        "role": "Developer"
+        }
+    ],
     "require": {
+        "php": ">=5.4.0",
         "slim/slim": "2.6.2",
         "illuminate/database": "5.0.27"
     },
@@ -7,8 +21,8 @@
         "files": [ 
             "app/config.php" 
         ],
-        "psr-4": {
-            "App\\": "app/src"
+    "psr-4": {
+        "App\\": "app/src"
         }
     }
 }
