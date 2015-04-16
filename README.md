@@ -5,7 +5,7 @@
 [![Packagist Version](https://img.shields.io/packagist/v/dieg0v/sliminit.svg?style=flat-square)](https://packagist.org/packages/dieg0v/sliminit)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-Simple [slim](https://github.com/slimphp/Slim) app for rapid propotype with:
+Simple [slim](https://github.com/slimphp/Slim) app for rapid prototype with:
 
 - [Normalize.css](https://github.com/necolas/normalize.css)
 - [Modernizr](https://github.com/Modernizr/Modernizr)
