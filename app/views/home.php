@@ -15,16 +15,14 @@
 	<link href="/static/build/css/<?php echo $css ?>" rel="stylesheet">
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
-        
 	<!--[if lt IE 9]>
 	<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
 </head>
 <body>
 
-    <div class="page">	
-		<p>SlimInit</p>
+    <div class="page">
+		<h1>SlimInit</h1>
 	</div>
 
 	<script type="text/javascript" src="/static/build/js/<?php echo $js; ?>"></script>

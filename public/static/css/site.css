@@ -1,19 +1,17 @@
 body {
 	margin: 0;
 	padding: 0;
-	width: 100%;
-	height: 100%;
-	color: #fff;
-	background-color: #000;
-	display: table;
-	font-weight: 100;
-	font-family: 'Roboto';
 }
 
 .page {
-	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
-	font-size: 96px;
-	margin-bottom: 40px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background-color: black;
+	color: white;
+	font-family: 'Roboto';
+	font-weight: 100;
+	font-size: 3em;
 }
