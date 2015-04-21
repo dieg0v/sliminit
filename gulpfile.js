@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var notify = require('gulp-notify');
+var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 var clean = require('gulp-clean');
 
@@ -32,6 +33,7 @@ gulp.task('css', function () {
     return gulp.src(src)
         .on('error', swallowError)
         .pipe(minifycss(minOpts))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(concat(''+(new Date().getTime())+'.css'))
         .pipe(gulp.dest(dest_folder))
         .pipe(notify({message:"Compress css"})
