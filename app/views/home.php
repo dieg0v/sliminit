@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta property="og:title" content="">
-	<meta property="og:description" content="">
+	<title><?php echo $metas['title']; ?></title>
+	<meta name="description" content="<?php echo $metas['description']; ?>">
+	<meta name="keywords" content="<?php echo $metas['keywords']; ?>">
+	<meta property="og:title" content="<?php echo $metas['title']; ?>">
+	<meta property="og:description" content="<?php echo $metas['description']; ?>>">
 
 	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/apple-touch-icon.png" rel="apple-touch-icon">
