@@ -14,13 +14,15 @@ $app->get('/', function () use ($app, $data){
 
 	// $testDb = App\Models\Test::all();
 
-	$app->render('home.php', $data);
+	$app->render('home.mustache', $data);
 
 });
 
 // ERROR 404
 $app->notFound(function () use ($app, $data){
 
-	$app->render('404.php', $data);
+	$data['metas']['title'] = '404 Page not Found';
+
+	$app->render('404.mustache', $data);
 
 });

@@ -15,7 +15,8 @@
     "require": {
         "php": ">=5.4.0",
         "slim/slim": "2.6.2",
-        "illuminate/database": "5.0.27"
+        "illuminate/database": "5.0.27",
+        "dearon/slim-mustache": "0.1.*"
     },
     "autoload": {
         "files": [ 
