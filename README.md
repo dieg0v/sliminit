@@ -4,6 +4,7 @@
 [![Latest Version](https://img.shields.io/github/release/dieg0v/sliminit.svg?style=flat-square)](https://github.com/dieg0v/sliminit/releases)
 [![Packagist Version](https://img.shields.io/packagist/v/dieg0v/sliminit.svg?style=flat-square)](https://packagist.org/packages/dieg0v/sliminit)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/dieg0v/sliminit/master.svg?style=flat-square)](https://travis-ci.org/dieg0v/sliminit)
 
 Simple [slim](https://github.com/slimphp/Slim) app for rapid prototype with:
 
@@ -13,7 +14,6 @@ Simple [slim](https://github.com/slimphp/Slim) app for rapid prototype with:
 - [illuminate/database](https://github.com/illuminate/database) for DB connections
 - [gulp](https://github.com/gulpjs/gulp) for manage js and css files
 
-
 ## Requirements
 
 * php >=5.4.0
@@ -21,6 +21,12 @@ Simple [slim](https://github.com/slimphp/Slim) app for rapid prototype with:
 * gulp
 * bower
 * npm
+
+The following versions of PHP are supported by this version.
+
+* PHP 5.4
+* PHP 5.5
+* PHP 5.6
 
 ## Install and run
 
@@ -47,6 +53,12 @@ $ gulp watch
 ```
 
 Manage your views on **app/views** and routes on **app/routes.php**
+
+## Testing
+
+``` bash
+$ php vendor/bin/codecept run
+```
 
 ## Contributing
 

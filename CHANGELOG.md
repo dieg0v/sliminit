@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.3.1 (develop)
+## 0.3.1 (released 2015-04-29)
 
 * Add codeception for site tests
 * Rename config.php to database.php
