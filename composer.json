@@ -19,8 +19,8 @@
         "dearon/slim-mustache": "0.1.*"
     },
     "autoload": {
-        "files": [ 
-            "app/config.php" 
+        "files": [
+            "app/database.php" 
         ],
     "psr-4": {
         "App\\": "app/src"
