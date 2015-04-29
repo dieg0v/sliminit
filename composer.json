@@ -1,7 +1,7 @@
 {
     "name": "dieg0v/sliminit",
     "description": "Simple slim app for rapid propotype",
-    "keywords": ["slim", "php"],
+    "keywords": ["slim", "app"],
     "homepage": "https://github.com/dieg0v/sliminit",
     "license": "MIT",
     "authors": [
