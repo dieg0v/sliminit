@@ -7,8 +7,10 @@ $data = [
 		'keywords' => 'Site keywords',
 	],
 	'css' => scandir('static/build/css', 1)[0],
-	'js' => scandir('static/build/js', 1)[0]
+	'js' => scandir('static/build/js', 1)[0],
+	'analytics' => false // false or google analytics code as string 'UA-XXXXXXX-X'
 ];
+
 
 $app->get('/', function () use ($app, $data){
 
