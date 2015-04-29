@@ -18,6 +18,10 @@
         "illuminate/database": "5.0.27",
         "dearon/slim-mustache": "0.1.*"
     },
+    "require-dev": {
+        "codeception/codeception": "~2.0",
+        
+    },
     "autoload": {
         "files": [
             "app/database.php" 

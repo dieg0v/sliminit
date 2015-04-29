@@ -2,6 +2,7 @@
 
 ## 0.3.1 (develop)
 
+* Add codeception for site tests
 * Rename config.php to database.php
 * Add google analytics code
 * Add remove trailing slash
