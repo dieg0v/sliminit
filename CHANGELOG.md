@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 (develop)
+
+* Rename config.php to database.php
+* Add google analytics code
+* Add remove trailing slash
+
 ## 0.3.0 (released 2015-04-28)
 
 * Add mustache as template engine dependency
