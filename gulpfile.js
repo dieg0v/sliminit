@@ -6,6 +6,11 @@ var notify = require('gulp-notify');
 var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 var clean = require('gulp-clean');
+var postcss = require('gulp-postcss');
+var customProperties = require("postcss-custom-properties");
+var atImport = require("postcss-import");
+var calc = require("postcss-calc");
+var customMedia = require('postcss-custom-media');
 
 function swallowError (error) {
     console.log(error.toString());
@@ -23,19 +28,29 @@ gulp.task('css', function () {
 
     var src = [];
 
-    src.push('public/static/vendor/normalize.css/normalize.css');
-    src.push('public/static/css/site.css');
+    src.push('public/static/css/main.css');
 
     gulp.src(dest_folder + '/*', {read: false}).pipe(clean({force: true}));
 
     var minOpts = {processImport:false, keepSpecialComments:false};
+    
+    var processors = [ 
+        atImport(),
+        require('cssnext'),
+        require('postcss-nested'),
+        require('postcss-mixins'), 
+        customProperties(),
+        calc(),
+        customMedia()
+    ];
 
     return gulp.src(src)
-        .on('error', swallowError)
+        .pipe( postcss(processors) )
         .pipe(minifycss(minOpts))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1'))
         .pipe(concat(''+(new Date().getTime())+'.css'))
         .pipe(gulp.dest(dest_folder))
+        .on('error', swallowError)
         .pipe(notify({message:"Compress css"})
     );
 });

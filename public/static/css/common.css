@@ -1,0 +1,12 @@
+body {
+	font-family: 'Roboto';
+}
+
+.wrap {
+    max-width: var(--wraper-width);
+}
+
+/* custom media queries */
+@media (--sm-viewport){}
+@media (--md-viewport){}
+@media (--lg-viewport){}

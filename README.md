@@ -46,7 +46,7 @@ $ bower install
 $ npm install
 ```
 
-Js and Css on **public/static/js/site.js** and **public/static/css/site.css** are automatically recompressed with:
+Js and Css on **public/static/js/site.js** and **public/static/css/main.css** are automatically recompressed with:
 
 ``` bash
 $ gulp watch
