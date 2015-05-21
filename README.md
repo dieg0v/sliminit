@@ -11,8 +11,10 @@ Simple [slim](https://github.com/slimphp/Slim) app for rapid prototype with:
 - [Normalize.css](https://github.com/necolas/normalize.css)
 - [Modernizr](https://github.com/Modernizr/Modernizr)
 - [jQuery](https://github.com/jquery/jquery)
-- [illuminate/database](https://github.com/illuminate/database) for DB connections
-- [gulp](https://github.com/gulpjs/gulp) for manage js and css files
+- [illuminate/database](https://github.com/illuminate/database)
+- [gulp](https://github.com/gulpjs/gulp)
+- [postcss](https://github.com/postcss/postcss)
+- [flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid)
 
 ## Requirements
 

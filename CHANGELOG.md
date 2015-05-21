@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.0 (develop)
+## 0.4.0 (released 2015-05-21)
 
 * Add postcss
 * Add flexboxgrid
