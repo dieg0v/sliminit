@@ -37,8 +37,8 @@ gulp.task('css', function () {
     var processors = [ 
         atImport(),
         require('cssnext'),
+        require('postcss-mixins'),
         require('postcss-nested'),
-        require('postcss-mixins'), 
         customProperties(),
         calc(),
         customMedia()
@@ -68,10 +68,10 @@ gulp.task('js', function () {
     src.push('public/static/js/site.js');
 
     return gulp.src(src)
-        .on('error', swallowError)
         .pipe(concat(''+(new Date().getTime())+'.js'))
         .pipe(uglify())
         .pipe(gulp.dest(dest_folder))
+        .on('error', swallowError)
         .pipe(notify({message:"Compress js"})
     );
 });

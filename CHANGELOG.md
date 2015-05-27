@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.* (develop)
+
+* Fix gulpfile
+
 ## 0.4.0 (released 2015-05-21)
 
 * Add postcss
