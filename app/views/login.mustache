@@ -1,0 +1,29 @@
+{{% BLOCKS }}
+{{< master }}
+
+{{$ content}}
+
+	<form method="post" name="login" action="/login">
+
+		<fieldset>
+			 <p>
+			 	<label for="login_usr">User</label>
+			 	<input name="login_usr" id="login_usr" type="text">
+			 </p>
+			 
+			 <p>
+			 	<label for="login_pass">Pass</label>
+			 	<input name="login_pass" id="login_pass" type="password">
+			 </p>
+
+			 <input name="token" type="hidden" value="">
+			 <input type="submit" value="Login">
+		</fieldset>
+	</form>
+
+
+  <script>window.onload = function (){ document.login.login_usr.focus();}</script>
+
+{{/ content}}
+
+{{/ master }}

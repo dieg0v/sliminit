@@ -2,6 +2,7 @@
 
 ## 0.4.* (develop)
 
+* Add login/admin tpls and routes
 * Fix gulpfile
 
 ## 0.4.0 (released 2015-05-21)
