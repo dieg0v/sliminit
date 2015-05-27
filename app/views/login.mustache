@@ -3,26 +3,43 @@
 
 {{$ content}}
 
-	<form method="post" name="login" action="/login">
+<div class="login row center-xs">
+    <div class="col-xs-12
+                col-sm-8
+                col-md-6
+                col-lg-4">
+        
+		<form method="post" name="login" action="/login">
+			
+			<h2>App login</h2>
 
-		<fieldset>
-			 <p>
-			 	<label for="login_usr">User</label>
-			 	<input name="login_usr" id="login_usr" type="text">
-			 </p>
-			 
-			 <p>
-			 	<label for="login_pass">Pass</label>
-			 	<input name="login_pass" id="login_pass" type="password">
-			 </p>
+			<fieldset>
+				
+				<legend>Login form</legend>
 
-			 <input name="token" type="hidden" value="">
-			 <input type="submit" value="Login">
-		</fieldset>
-	</form>
+				<p>
+					<label for="login_usr">Username</label>
+					<input placeholder="Your username..." name="login_usr" id="login_usr" type="text">
+				</p>
 
+				<p>
+					<label for="login_pass">Password</label>
+					<input placeholder="Your password..." name="login_pass" id="login_pass" type="password">
+				</p>
 
-  <script>window.onload = function (){ document.login.login_usr.focus();}</script>
+				<input name="token" type="hidden" value="">
+				
+				<p>
+					<input type="submit" value="Login">
+				</p>
+
+			</fieldset>
+		</form>
+
+    </div>
+</div>
+
+<script>window.onload = function (){ document.login.login_usr.focus();}</script>
 
 {{/ content}}
 
