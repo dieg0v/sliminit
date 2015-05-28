@@ -11,6 +11,7 @@ var customProperties = require("postcss-custom-properties");
 var atImport = require("postcss-import");
 var calc = require("postcss-calc");
 var customMedia = require('postcss-custom-media');
+var livereload = require('gulp-livereload');
 
 function swallowError (error) {
     console.log(error.toString());
@@ -18,6 +19,7 @@ function swallowError (error) {
 }
 
 gulp.task('watch', function () {
+    livereload.listen();
     gulp.watch('public/static/css/**/*.css', ['css']);
     gulp.watch('public/static/js/**/*.js', ['js']);
 });
@@ -48,10 +50,12 @@ gulp.task('css', function () {
         .pipe( postcss(processors) )
         .pipe(minifycss(minOpts))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1'))
-        .pipe(concat(''+(new Date().getTime())+'.css'))
+        //.pipe(concat(''+(new Date().getTime())+'.css'))
+        .pipe(concat('min.css'))
         .pipe(gulp.dest(dest_folder))
         .on('error', swallowError)
         .pipe(notify({message:"Compress css"})
+        .pipe(livereload())
     );
 });
 
