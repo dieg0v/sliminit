@@ -38,9 +38,8 @@ body {
 	}
 	input{
 		width: 100%;
-		border: 1px solid #ccc;
 		background-color: #fff;
-		width: 100%;
+		border: 1px solid #ccc;
 		margin-bottom: 1em;
 		padding: .4em .6em;
 		border-radius: 3px;
