@@ -1,16 +1,23 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var watch = require('gulp-watch');
 var notify = require('gulp-notify');
 var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 var clean = require('gulp-clean');
+var watch = require('gulp-watch');
+
+// POSTCSS
 var postcss = require('gulp-postcss');
 var customProperties = require("postcss-custom-properties");
 var atImport = require("postcss-import");
 var calc = require("postcss-calc");
 var customMedia = require('postcss-custom-media');
+
+// IMAGEMIN
+var imagemin = require('gulp-imagemin');
+
+// LIVERELOAD
 var livereload = require('gulp-livereload');
 
 function swallowError (error) {
@@ -24,6 +31,7 @@ gulp.task('watch', function () {
     gulp.watch('public/static/js/**/*.js', ['js']);
 });
 
+
 gulp.task('css', function () {
 
     var dest_folder = 'public/static/build/css';
@@ -35,8 +43,8 @@ gulp.task('css', function () {
     gulp.src(dest_folder + '/*', {read: false}).pipe(clean({force: true}));
 
     var minOpts = {processImport:false, keepSpecialComments:false};
-    
-    var processors = [ 
+
+    var processors = [
         atImport(),
         require('cssnext'),
         require('postcss-mixins'),
@@ -59,6 +67,10 @@ gulp.task('css', function () {
     );
 });
 
+
+/**
+* Concat and minify js
+*/
 gulp.task('js', function () {
 
     var dest_folder = 'public/static/build/js';
@@ -78,4 +90,24 @@ gulp.task('js', function () {
         .on('error', swallowError)
         .pipe(notify({message:"Compress js"})
     );
+});
+
+
+/**
+* Optimize images with gulp-imagemin
+*/
+// Delete build images directory
+gulp.task('cleanimages', function() {
+    return gulp.src('public/static/build/media/img')
+    .pipe(clean());
+});
+
+gulp.task('images',['cleanimages'], function () {
+    return gulp.src('public/static/media/img/**/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}]
+        }))
+        .pipe(gulp.dest('public/static/build/media/img'))
+        .pipe(notify({ message: 'Optimized images' }));
 });
