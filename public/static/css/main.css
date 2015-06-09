@@ -1,4 +1,13 @@
 /*
+Google font
+
+Import default roboto 300, 300 italic
+
+Styleguide fonts
+*/
+@import 'http://fonts.googleapis.com/css?family=Roboto:300,300italic';
+
+/*
 Normalize
 
 Import Normalize
