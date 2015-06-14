@@ -3,9 +3,16 @@
 return [
 
     'metas' => [
-        'title' => 'Español title',
-        'description' => 'Español description',
-        'keywords' => 'español, keywords',
+        'home' => [
+            'title' => 'Español title home',
+            'description' => 'Español description home',
+            'keywords' => 'español, keywords, home',
+        ],
+        'about' => [
+            'title' => 'Español title about',
+            'description' => 'Español description about',
+            'keywords' => 'español, keywords, about',
+        ],
     ],
 
     'menu' => [

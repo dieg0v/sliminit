@@ -84,12 +84,12 @@ $app->group($route, function () use ($app, $data, $pages) {
 // ------------------------------------------------------------------
 
 $app->notFound(function () use ($app) {
-    $data['langs']['metas']['title'] = '404 Page not Found';
+    $data['metas']['title'] = '404 Page not Found';
     $app->render('404', $data);
 });
 
 $app->error(function () use ($app) {
-    $data['langs']['metas']['title'] = 'Internal server error';
+    $data['metas']['title'] = 'Internal server error';
     $app->render('500', $data);
 });
 
@@ -102,6 +102,11 @@ $app->error(function () use ($app) {
 $app->hook('slim.before.dispatch', function() use ($app, $data, $pages) {
 
     $routeName = $app->router()->getCurrentRoute()->getName();
+
+    $data['metas']['title'] = $data['langs']['metas'][$routeName]['title'];
+    $data['metas']['description'] = $data['langs']['metas'][$routeName]['description'];
+    $data['metas']['keywords'] = $data['langs']['metas'][$routeName]['keywords'];
+
     $menu_langs = [];
 
     if($routeName){
