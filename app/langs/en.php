@@ -8,6 +8,11 @@ return [
         'keywords' => 'english, keywords',
     ],
 
+    'menu' => [
+        'home' => 'Principal page',
+        'about' => 'About us',
+    ],
+
     'about' => 'About us',
 
 ];

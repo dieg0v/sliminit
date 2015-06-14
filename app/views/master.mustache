@@ -38,7 +38,33 @@
 <body>
 
 	<div class="wrap center-xs container-fluid">
+
+		{{$ header }}
+		<h1>SlimInit</h1>
+
+		<nav>
+		    <ul>
+		    {{# menu_langs }}
+		        <li>
+		        	<a href="{{ route }}">{{ lang }}</a>
+		        </li>
+		    {{/ menu_langs }}
+		    </ul>
+		</nav>
+
+		<nav>
+		    <ul>
+		    {{# menu }}
+		        <li>
+		        	<a href="{{ route }}">{{ lang }}</a>
+		        </li>
+		    {{/ menu }}
+		    </ul>
+		</nav>
+		{{/ header }}
+
 		{{$ content }}{{/ content }}
+
 	</div>
 
 	{{$ scripts }}

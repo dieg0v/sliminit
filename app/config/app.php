@@ -2,7 +2,7 @@
 
 return [
 
-    'langs' => ['es','en','gl'],
+    'app_langs' => ['es','en','gl'],
 
     'default_lang' => 'es',
 
@@ -15,7 +15,8 @@ return [
 
     'js' => scandir('static/build/js', 1)[0],
 
-    'analytics' => false, // false or google analytics code as string 'UA-XXXXXXX-X'
+    // analytics => false or google analytics code as string 'UA-XXXXXXX-X'
+    'analytics' => false,
 
     'database' => [
 

@@ -8,7 +8,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 session_start();
 
-$data = require '../app/config.php';
+$data = require '../app/config/app.php';
 
 // ==================================================================
 //
@@ -49,20 +49,29 @@ require '../app/routes/admin.php';
 //
 // ------------------------------------------------------------------
 
-foreach ($data['langs'] as $lang) {
+$lang_uri = explode("/", parse_url(
+    $app->request->getResourceUri(), PHP_URL_PATH)
+)[1];
 
-    $route = ($lang==$data['default_lang']) ? '' : '/'.$lang;
+$data['lang'] = $data['default_lang'];
+$route = '';
 
-    $data['lang'] = $lang;
-
-    $data['langs'] = require '../app/langs/'.$lang.'.php';
-
-    $app->group($route, function () use ($app, $data) {
-
-        require '../app/routes/site.php';
-
-    });
+if(in_array($lang_uri, $data['app_langs'])){
+    if($lang_uri!=$data['default_lang']){
+        $data['lang'] = $lang_uri;
+        $route = '/'.$lang_uri;
+    }
 }
+
+$data['langs'] = require '../app/langs/'.$data['lang'].'.php';
+
+$pages = require '../app/config/pages.php';
+
+$app->group($route, function () use ($app, $data, $pages) {
+
+    require '../app/routes/site.php';
+
+});
 
 // ==================================================================
 //
@@ -70,15 +79,65 @@ foreach ($data['langs'] as $lang) {
 //
 // ------------------------------------------------------------------
 
-$app->notFound(function () use ($app, $data) {
+$app->notFound(function () use ($app) {
     $data['langs']['metas']['title'] = '404 Page not Found';
     $app->render('404', $data);
 });
 
 // ==================================================================
 //
-//  Run App
+//  Add before.dispatch and run app
 //
 // ------------------------------------------------------------------
+
+$app->hook('slim.before.dispatch', function() use ($app, $data, $pages) {
+
+    $routeName = $app->router()->getCurrentRoute()->getName();
+    $menu_langs = [];
+
+    if($routeName){
+
+        foreach ($data['app_langs'] as $lang) {
+            $routeItem = new stdClass();
+            $routeItem->lang = $lang;
+            $routeItem->route = '/'.$lang;
+            if($lang == $data['default_lang']){
+                $routeItem->route = '';
+                if($pages[$routeName][$lang]['route']=='/'){
+                    $routeItem->route = '/';
+                }
+            }
+            if($pages[$routeName][$lang]['route']!='/'){
+                $routeItem->route .= $pages[$routeName][$lang]['route'];
+            }
+            $menu_langs[] = $routeItem;
+            $routeItem = null;
+        }
+    }
+
+    $data['menu_langs'] = $menu_langs;
+
+    $app->view->appendData($data);
+
+});
+
+$data['menu'] = [];
+
+foreach ($data['langs']['menu'] as $key => $value) {
+    $menuItem = new stdClass();
+    $menuItem->lang = $value;
+    $menuItem->route = $app->urlFor($key);
+    if(strlen($menuItem->route)>1){
+        if(substr($menuItem->route, -1)=='/'){
+            $menuItem->route = substr($menuItem->route, 0, -1);
+        }
+    }
+    $data['menu'][] = $menuItem;
+    $menuItem = null;
+}
+
+unset($data['admin']);
+
+$app->view->appendData($data);
 
 $app->run();

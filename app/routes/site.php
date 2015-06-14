@@ -1,14 +1,16 @@
 <?php
 
-$app->get('/', function () use ($app, $data){
+// ==================================================================
+//
+// Atomatic page resolution based on page congig file
+//
+// ------------------------------------------------------------------
 
-    // $testDb = App\Models\Test::all();
-    $app->render('home', $data);
+foreach ($pages as $key => $page) {
 
-});
+    $app->get($page[$data['lang']]['route'], function () use ($app, $page, $data){
 
-$app->get('/about-us', function () use ($app, $data){
+        $app->render($page[$data['lang']]['view']);
 
-    $app->render('about', $data);
-
-});
+    })->name($key);
+}

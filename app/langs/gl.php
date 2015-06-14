@@ -8,6 +8,11 @@ return [
         'keywords' => 'galego, keywords',
     ],
 
+    'menu' => [
+        'home' => 'Páxina principal',
+        'about' => 'Sobre nós',
+    ],
+
     'about' => 'Sobre nós',
 
 ];

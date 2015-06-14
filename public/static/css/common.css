@@ -5,10 +5,19 @@ body {
 	font-family: 'Roboto';
 }
 
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	margin-bottom: 2em;
+	li {
+		display: inline;
+	}
+}
+
 .wrap {
     max-width: var(--wraper-width);
 }
-
 
 /* Login page basic styling */
 .login{
@@ -53,7 +62,6 @@ body {
 		}
 	}
 }
-
 
 /* custom media queries */
 @media (--sm-viewport){}
