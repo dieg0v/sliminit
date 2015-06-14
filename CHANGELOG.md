@@ -1,7 +1,12 @@
 # Changelog
 
-## 0.4.* (develop)
+## 0.5.0 (released 2015-06-14)
 
+* Add multilang support
+* Add auto pages generate via pages config
+* Add page for internal server error
+* Reestructure folders, files and code
+* Add gulp task images
 * Add login/admin tpls and routes
 * Fix gulpfile
 
