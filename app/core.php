@@ -55,13 +55,17 @@ $lang_uri = explode("/", parse_url(
 
 $data['lang'] = $data['default_lang'];
 $route = '';
+$home_link = '/';
 
 if(in_array($lang_uri, $data['app_langs'])){
     if($lang_uri!=$data['default_lang']){
         $data['lang'] = $lang_uri;
         $route = '/'.$lang_uri;
+        $home_link = $route;
     }
 }
+
+$data['home_link'] = $home_link;
 
 $data['langs'] = require '../app/langs/'.$data['lang'].'.php';
 
