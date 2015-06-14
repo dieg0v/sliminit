@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.* (develop)
+* todo: enviroments variables
+
 ## 0.5.0 (released 2015-06-14)
 
 * Add multilang support
