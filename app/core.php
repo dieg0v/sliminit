@@ -75,13 +75,18 @@ $app->group($route, function () use ($app, $data, $pages) {
 
 // ==================================================================
 //
-//  Errors: 404
+//  Errors 404 and 500
 //
 // ------------------------------------------------------------------
 
 $app->notFound(function () use ($app) {
     $data['langs']['metas']['title'] = '404 Page not Found';
     $app->render('404', $data);
+});
+
+$app->error(function () use ($app) {
+    $data['langs']['metas']['title'] = 'Internal server error';
+    $app->render('500', $data);
 });
 
 // ==================================================================
