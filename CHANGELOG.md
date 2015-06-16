@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.5.* (develop)
-* todo: enviroments variables
+## 0.5.1 (released 2015-06-16)
+
+* Apache htaccess improvemets
+* Add custom test page example
 * Fix css gulp task (errors and nextcss)
 * Add PostCss color functions
 
