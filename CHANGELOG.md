@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.* (develop)
+* todo: enviroments variables
+* Fix css gulp task (errors and nextcss)
+* Add PostCss color functions
+
 ## 0.5.0 (released 2015-06-14)
 
 * Add multilang support

@@ -17,6 +17,7 @@
     "postcss-custom-properties": "^3.3.0",
     "postcss-custom-media": "^3.0.0",
     "postcss-calc": "^4.0.1",
+    "postcss-color-function": "1.3.0",
     "gulp-imagemin": "2.2.1",
     "gulp-livereload": "3.7.0"
   }

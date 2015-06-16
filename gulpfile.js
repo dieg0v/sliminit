@@ -1,18 +1,21 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var notify = require('gulp-notify');
-var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var watch = require('gulp-watch');
+var notify = require('gulp-notify');
+
+// GENERIC CSS
+var autoprefixer = require('gulp-autoprefixer');
+var minifycss = require('gulp-minify-css');
 
 // POSTCSS
 var postcss = require('gulp-postcss');
-var customProperties = require("postcss-custom-properties");
 var atImport = require("postcss-import");
-var calc = require("postcss-calc");
+var customProperties = require("postcss-custom-properties");
 var customMedia = require('postcss-custom-media');
+var calc = require("postcss-calc");
+var colorFunction = require("postcss-color-function");
 
 // IMAGEMIN
 var imagemin = require('gulp-imagemin');
@@ -20,11 +23,18 @@ var imagemin = require('gulp-imagemin');
 // LIVERELOAD
 var livereload = require('gulp-livereload');
 
+/**
+* Errors
+*/
 function swallowError (error) {
     console.log(error.toString());
     this.emit('end');
 }
 
+
+/**
+* Watch task
+*/
 gulp.task('watch', function () {
     livereload.listen();
     gulp.watch('public/static/css/**/*.css', ['css']);
@@ -32,6 +42,9 @@ gulp.task('watch', function () {
 });
 
 
+/**
+* Styles task
+*/
 gulp.task('css', function () {
 
     var dest_folder = 'public/static/build/css';
@@ -46,22 +59,22 @@ gulp.task('css', function () {
 
     var processors = [
         atImport(),
-        require('cssnext'),
         require('postcss-mixins'),
         require('postcss-nested'),
         customProperties(),
+        customMedia(),
         calc(),
-        customMedia()
+        colorFunction()
     ];
 
     return gulp.src(src)
         .pipe( postcss(processors) )
+        .on('error', swallowError)
         .pipe(minifycss(minOpts))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1'))
         //.pipe(concat(''+(new Date().getTime())+'.css'))
         .pipe(concat('min.css'))
         .pipe(gulp.dest(dest_folder))
-        .on('error', swallowError)
         .pipe(notify({message:"Compress css"})
         .pipe(livereload())
     );
