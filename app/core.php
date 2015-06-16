@@ -103,9 +103,11 @@ $app->hook('slim.before.dispatch', function() use ($app, $data, $pages) {
 
     $routeName = $app->router()->getCurrentRoute()->getName();
 
-    $data['metas']['title'] = $data['langs']['metas'][$routeName]['title'];
-    $data['metas']['description'] = $data['langs']['metas'][$routeName]['description'];
-    $data['metas']['keywords'] = $data['langs']['metas'][$routeName]['keywords'];
+    if(isset($data['langs']['metas'][$routeName])){
+        $data['metas']['title'] = $data['langs']['metas'][$routeName]['title'];
+        $data['metas']['description'] = $data['langs']['metas'][$routeName]['description'];
+        $data['metas']['keywords'] = $data['langs']['metas'][$routeName]['keywords'];
+    }
 
     $menu_langs = [];
 
@@ -115,14 +117,16 @@ $app->hook('slim.before.dispatch', function() use ($app, $data, $pages) {
             $routeItem = new stdClass();
             $routeItem->lang = $lang;
             $routeItem->route = '/'.$lang;
-            if($lang == $data['default_lang']){
-                $routeItem->route = '';
-                if($pages[$routeName][$lang]['route']=='/'){
-                    $routeItem->route = '/';
+            if(isset($pages[$routeName])){
+                if($lang == $data['default_lang']){
+                    $routeItem->route = '';
+                    if($pages[$routeName][$lang]['route']=='/'){
+                        $routeItem->route = '/';
+                    }
                 }
-            }
-            if($pages[$routeName][$lang]['route']!='/'){
-                $routeItem->route .= $pages[$routeName][$lang]['route'];
+                if($pages[$routeName][$lang]['route']!='/'){
+                    $routeItem->route .= $pages[$routeName][$lang]['route'];
+                }
             }
             $menu_langs[] = $routeItem;
             $routeItem = null;

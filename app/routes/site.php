@@ -14,3 +14,15 @@ foreach ($pages as $key => $page) {
 
     })->name($key);
 }
+
+// ==================================================================
+//
+// Non auto, custom test page example
+//
+// ------------------------------------------------------------------
+
+$app->get("/test", function () use ($app, $data){
+
+    echo $app->router()->getCurrentRoute()->getName(). '-> this is a manual page test example on lang: '.$data['lang'];
+
+})->name('test');
