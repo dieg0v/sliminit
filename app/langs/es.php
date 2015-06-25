@@ -13,13 +13,21 @@ return [
             'description' => 'Español description about',
             'keywords' => 'español, keywords, about',
         ],
+        'cookies' => [
+            'title' => 'Español title cookies',
+            'description' => 'Español description cookies',
+            'keywords' => 'español, keywords, cookies',
+        ],
     ],
 
     'menu' => [
         'home' => 'Página principal',
         'about' => 'Sobre nosotros',
+        'cookies' => 'Ley de cookies',
     ],
 
     'about' => 'Sobre nosotros',
+
+    'cookies' => 'Ley de cookies',
 
 ];

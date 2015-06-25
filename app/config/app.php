@@ -32,5 +32,13 @@ return [
             'prefix' => ''
 
         ]
+    ],
+
+    'cookies' => [
+
+        'active' => true,
+        'name' => 'cookie_law',
+        'time' => '3600',
+        'domain' => 'www.localhost.org',
     ]
 ];

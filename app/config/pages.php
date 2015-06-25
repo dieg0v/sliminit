@@ -32,4 +32,19 @@ return [
         ],
     ],
 
+    'cookies' => [
+        'es' => [
+            'route' => '/ley-de-cookies',
+            'view' => 'cookies',
+        ],
+        'en' => [
+            'route' => '/cookies-law',
+            'view' => 'cookies',
+        ],
+        'gl' => [
+            'route' => '/ley-de-cookies',
+            'view' => 'cookies',
+        ],
+    ],
+
 ];
