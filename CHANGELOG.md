@@ -1,7 +1,7 @@
 # Changelog
 
 ## 0.5.* (develop)
-* todo: enviroments variables
+* Add app config local file
 
 ## 0.5.1 (released 2015-06-16)
 

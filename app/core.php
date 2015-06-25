@@ -8,7 +8,13 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 session_start();
 
-$data = require '../app/config/app.php';
+$local_conf = '../app/config/app.local.php';
+
+if(file_exists($local_conf)){
+    $data = require $local_conf;
+}else{
+    $data = require '../app/config/app.php';
+}
 
 // ==================================================================
 //
