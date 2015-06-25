@@ -160,8 +160,6 @@ foreach ($data['langs']['menu'] as $key => $value) {
     $menuItem = null;
 }
 
-unset($data['admin']);
-
 $app->view->appendData($data);
 
 $app->run();
