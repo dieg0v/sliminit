@@ -2,6 +2,12 @@
 
 return [
 
+    'siteurl' => 'http://localhost:8889',
+
+    'author' => 'Author name',
+
+    'sitename' => 'Site Name',
+
     'app_langs' => ['es','en','gl'],
 
     'default_lang' => 'es',
@@ -15,8 +21,7 @@ return [
 
     'js' => scandir('static/build/js', 1)[0],
 
-    // analytics => false or google analytics code as string 'UA-XXXXXXX-X'
-    'analytics' => false,
+    'analytics' => false, // false or google analytics code as string 'UA-XXXXXXX-X'
 
     'database' => [
 

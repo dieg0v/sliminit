@@ -6,10 +6,27 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ metas.title }}</title>
+	
 	<meta name="description" content="{{ metas.description }}">
 	<meta name="keywords" content="{{ metas.keywords }}">
+	<meta name="author" content="{{ author }}">
+	<meta name="revisit-after" content="7 days">
+	<meta name="robots" content="index,follow">
+	
 	<meta property="og:title" content="{{ metas.title }}">
 	<meta property="og:description" content="{{ metas.description }}">
+	<meta property="og:url" content="{{ siteurl }}">
+	<meta property="og:site_name" content="{{ sitename }}">
+
+	<meta name="twitter:site" content="{{ sitename }}">
+	<meta name="twitter:title" content="{{ metas.title }}">
+	<meta name="twitter:description" content="{{ metas.description }}">
+	<meta name="twitter:creator" content="{{ author }}">
+
+	<link rel="alternate" hreflang="{{ default_lang }}" href="{{ siteurl }}">
+	{{# alternates }}
+	<link rel="alternate" hreflang="{{ . }}" href="{{ siteurl }}/{{ . }}">
+	{{/ alternates }}
 
 	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/apple-touch-icon.png" rel="apple-touch-icon">
