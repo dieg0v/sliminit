@@ -77,6 +77,14 @@ $data['langs'] = require '../app/langs/'.$data['lang'].'.php';
 
 $pages = require '../app/config/pages.php';
 
+$lang = $data['lang'];
+
+$data['route'] = function ($routeName) use ($pages, $lang, $route){
+
+    return $route.$pages[$routeName][$lang]['route'];
+
+};
+
 $app->group($route, function () use ($app, $data, $pages) {
 
     require '../app/routes/site.php';
@@ -98,6 +106,16 @@ $app->error(function () use ($app) {
     $data['metas']['title'] = 'Internal server error';
     $app->render('500', $data);
 });
+
+// ==================================================================
+//
+//  Cookies advise
+//
+// ------------------------------------------------------------------
+
+
+$data['cookieState'] = !isset($_COOKIE[$data['cookies']['name']]) ? true : false;
+
 
 // ==================================================================
 //

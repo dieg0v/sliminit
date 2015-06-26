@@ -38,7 +38,7 @@ return [
 
         'active' => true,
         'name' => 'cookie_law',
-        'time' => '3600',
+        'days' => '15',
         'domain' => 'www.localhost.org',
     ]
 ];

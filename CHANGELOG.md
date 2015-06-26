@@ -1,6 +1,8 @@
 # Changelog
 
 ## 0.5.* (develop)
+* Add routes helper
+* Add cookies config and pages
 * Add app config local file
 
 ## 0.5.1 (released 2015-06-16)

@@ -35,15 +35,15 @@ return [
     'cookies' => [
         'es' => [
             'route' => '/ley-de-cookies',
-            'view' => 'cookies',
+            'view' => 'cookies/es',
         ],
         'en' => [
             'route' => '/cookies-law',
-            'view' => 'cookies',
+            'view' => 'cookies/en',
         ],
         'gl' => [
             'route' => '/ley-de-cookies',
-            'view' => 'cookies',
+            'view' => 'cookies/gl',
         ],
     ],
 

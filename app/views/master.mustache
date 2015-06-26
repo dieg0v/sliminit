@@ -65,10 +65,31 @@
 
 		{{$ content }}{{/ content }}
 
+
+		<footer>
+			<small><a href="{{# route }}cookies{{/ route }}">{{ langs.cookies }}</a></small>
+		</footer>
+
 	</div>
 
+	{{# cookies.active }}
+		{{# cookieState }}
+		<div class="cookie-advise">
+			<p>
+				{{ langs.cookies_msn }}
+			</p>
+			<span class="cookie-ok"><a href="#" id="cookies-accept-btn">{{ langs.cookies_accept }}</a></span>
+			<span class="cookie-info"> <a href="{{# route }}cookies{{/ route }}">{{ langs.cookies_more_info }}</a></span>
+		</div>
+	    {{/ cookieState }}
+    {{/ cookies.active }}
+   
 	{{$ scripts }}
 	<script type="text/javascript" src="/static/build/js/{{ js }}"></script>
+	<script type="text/javascript">
+		App.cookies.name = '{{ cookies.name }}';
+		App.cookies.days = {{ cookies.days }};
+	</script>
 	{{/ scripts }}
 
 </body>

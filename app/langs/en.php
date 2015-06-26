@@ -22,12 +22,15 @@ return [
 
     'menu' => [
         'home' => 'Principal page',
-        'about' => 'About us',
-        'cookies' => 'Cookies law',
+        'about' => 'About us'
     ],
 
     'about' => 'About us',
 
     'cookies' => 'Cookies law',
 
+    'cookies_msn' => 'Pursuant to Law no. 34/2002 on the Information Society Services, we remind you that this site is using cookies for the improvement of our services.',
+    'cookies_accept' => 'Accept',
+    'cookies_more_info' => 'More information.',
+    
 ];

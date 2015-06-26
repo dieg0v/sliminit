@@ -22,12 +22,16 @@ return [
 
     'menu' => [
         'home' => 'Página principal',
-        'about' => 'Sobre nosotros',
-        'cookies' => 'Ley de cookies',
+        'about' => 'Sobre nosotros'
     ],
 
     'about' => 'Sobre nosotros',
 
     'cookies' => 'Ley de cookies',
+
+    'cookies_msn' => 'En cumplimiento con la Ley 34/2002, de Servicios de la Sociedad de la Información, le recordamos que este sitio web utiliza cookies con el fin de mejorar nuestros servicios.',
+    'cookies_accept' => 'Aceptar',
+    'cookies_more_info' => 'Más información',
+
 
 ];
