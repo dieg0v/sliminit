@@ -19,7 +19,7 @@ class SiteCest
 		$I->wantTo('Navigate on site');
 
 		$I->amOnPage('/');
-		$I->seeCurrentUrlEquals('');
+		$I->seeCurrentUrlEquals('/');
 		$I->see('sliminit');
 
     }
