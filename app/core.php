@@ -85,8 +85,6 @@ $data['route'] = function ($routeName) use ($pages, $lang, $route){
 
 };
 
-$data['alternates'] = array_values(array_diff($data['app_langs'], [$data['default_lang']]));
-
 $app->group($route, function () use ($app, $data, $pages) {
 
     require '../app/routes/site.php';
