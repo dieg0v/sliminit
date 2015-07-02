@@ -51,33 +51,35 @@
     {{/analytics}}
 </head>
 <body>
-    <div class="wrapper-narrow">
+    <div class="page">
         {{$ header }}
-        <h1><a href="{{ home_link }}">SlimInit</a></h1>
+        <header class="wrapper">
+            <h1><a href="{{ home_link }}">SlimInit</a></h1>
 
-        <nav>
-            <ul>
-            {{# menu_langs }}
-                <li>
-                    <a href="{{ route }}">{{ lang }}</a>
-                </li>
-            {{/ menu_langs }}
-            </ul>
+            <nav>
+                <ul>
+                {{# menu_langs }}
+                    <li>
+                        <a href="{{ route }}">{{ lang }}</a>
+                    </li>
+                {{/ menu_langs }}
+                </ul>
 
-            <ul>
-            {{# menu }}
-                <li>
-                    <a href="{{ route }}">{{ lang }}</a>
-                </li>
-            {{/ menu }}
-            </ul>
-        </nav>
+                <ul>
+                {{# menu }}
+                    <li>
+                        <a href="{{ route }}">{{ lang }}</a>
+                    </li>
+                {{/ menu }}
+                </ul>
+            </nav>
+        </header>
         {{/ header }}
 
         {{$ content }}{{/ content }}
 
         {{$ footer }}
-        <footer>
+        <footer class="wrapper">
         	<a href="{{# route }}cookies{{/ route }}">{{ langs.cookies }}</a>
         </footer>
         {{/ footer }}

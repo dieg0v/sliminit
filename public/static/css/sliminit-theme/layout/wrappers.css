@@ -1,6 +1,6 @@
-@custom-selector --wrappers .wrapper, .wrapper-narrow;
-
---wrappers {
+.wrapper,
+.wrapper-desktop,
+.wrapper-narrow {
     padding-left: 1rem;
     padding-right: 1rem;
     display: block;
@@ -23,8 +23,8 @@
 }
 
 /* Normal wrapper */
-.wrapper{
-    max-width: var(--wraper);
+.wrapper-desktop{
+    max-width: var(--wraper-desktop);
 }
 
 /* mini wrapper  */

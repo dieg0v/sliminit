@@ -1,0 +1,29 @@
+/* Cookies advise */
+.cookies-advise{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: color(var(--color-main-light) a(0.9));
+    padding: 1em;
+    text-align: center;
+    font-size: 0.813em;
+    p{
+        display: inline-block;
+        line-height: 1.5em;
+        margin-bottom: .5em;
+        color: var(--color-main);
+    }
+}
+.cookies-accept,
+.cookies-info{
+    display: inline-block;
+    background-color: var(--color-main-medium);
+    color: var(--color-main-light);
+    padding: .5em 1em;
+    &:hover{
+        background-color: var(--color-main);
+        color: var(--color-main-light);
+        text-decoration: none;
+    }
+}

@@ -1,46 +1,26 @@
 /*
-Google font
-
-Import default roboto 300, 300 italic, 700, 700 italic
-
-Styleguide fonts
+   Google font
+   Import default roboto 300, 300 italic, 700, 700 italic
 */
 @import 'http://fonts.googleapis.com/css?family=Roboto:700,700italic,300,300italic';
 
-
-/*
-Normalize
-
-Import Normalize
-
-Styleguide normalize
-*/
+/* Normalize */
 @import '../vendor/normalize.css/normalize.css';
 
-
-/*
-Variables
-
-Common variables
-
-Styleguide variables
-*/
+/* Variables */
 @import 'variables.css';
 
-/*
-layout
-
-Common layout
-
-Styleguide layout
-*/
+/* Layout */
 @import 'layout/wrappers.css';
 
-/*
-Common
-
-Common global styles
-
-Styleguide common
-*/
+/* Common global styles */
 @import 'common.css';
+
+/* Modules */
+@import 'modules/header.css';
+@import 'modules/footer.css';
+@import 'modules/cookies.css';
+
+/* Pages */
+@import 'pages/home.css';
+@import 'pages/login.css';
