@@ -26,7 +26,8 @@ a{
     padding-bottom: 40px;
 }
 
-.cookie-advise{
+/* Cookies advise */
+.cookies-advise{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -39,21 +40,16 @@ a{
         line-height: 1.5em;
         margin-bottom: 0;
         color:black;
-        a{
-            &:hover{
-                color: #268DF4;
-
-            }
-        }
     }
     a{
         color: white;
+        background-color: black;
         display: inline-block;
         text-decoration:none;
     }
 }
-.cookie-ok a,
-.cookie-info a{
+.cookies-accept,
+.cookies-info{
     background-color: white;
     padding: 5px 10px 4px;
     color: #000;
@@ -73,6 +69,7 @@ a{
 	border-radius: 6px;
 	h2{
 		padding-top: 1em;
+        text-align: center;
 	}
 	fieldset{
 		border: none;

@@ -2,6 +2,12 @@
 
 return [
 
+    // ==================================================================
+    //
+    // Meta tags
+    //
+    // ------------------------------------------------------------------
+
     'metas' => [
         'home' => [
             'title' => 'English title home',
@@ -20,6 +26,12 @@ return [
         ],
     ],
 
+    // ==================================================================
+    //
+    // Site  menu
+    //
+    // ------------------------------------------------------------------
+
     'menu' => [
         'home' => 'Principal page',
         'about' => 'About us'
@@ -29,8 +41,14 @@ return [
 
     'cookies' => 'Cookies law',
 
+    // ==================================================================
+    //
+    // Cookies advise
+    //
+    // ------------------------------------------------------------------
+
     'cookies_msn' => 'Pursuant to Law no. 34/2002 on the Information Society Services, we remind you that this site is using cookies for the improvement of our services.',
     'cookies_accept' => 'Accept',
     'cookies_more_info' => 'More information.',
-    
+
 ];

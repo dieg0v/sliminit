@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1 (released 2015-...-...)
+* Added editorconfig
+* Fixed translation errors
+
 ## 0.6.0 (released 2015-07-01)
 * Add routes helper
 * Add cookies config and pages
