@@ -5,7 +5,7 @@ Import default roboto 300, 300 italic
 
 Styleguide fonts
 */
-@import 'http://fonts.googleapis.com/css?family=Roboto:300,300italic';
+/* @import 'http://fonts.googleapis.com/css?family=Roboto:300,300italic'; */
 
 /*
 Normalize
@@ -14,7 +14,7 @@ Import Normalize
 
 Styleguide normalize
 */
-@import '../vendor/normalize.css/normalize.css';
+/* @import '../vendor/normalize.css/normalize.css'; */
 
 /*
 Variables
@@ -23,7 +23,7 @@ Flexboxgrid an common variables
 
 Styleguide variables
 */
-@import 'variables.css';
+/* @import 'variables.css'; */
 
 /*
 Grid
@@ -32,7 +32,7 @@ Grid for fluid column layout.
 
 Styleguide grid
 */
-@import '../vendor/flexboxgrid/src/css/flexboxgrid.css';
+/* @import '../vendor/flexboxgrid/src/css/flexboxgrid.css'; */
 
 /*
 Common
@@ -41,4 +41,8 @@ Common global styles
 
 Styleguide common
 */
-@import 'common.css';
+/* @import 'common.css'; */
+
+
+
+@import 'sliminit-theme/sliminit-theme.css';
