@@ -2,6 +2,12 @@
 
 return [
 
+    // ==================================================================
+    //
+    // Meta tags
+    //
+    // ------------------------------------------------------------------
+
     'metas' => [
         'home' => [
             'title' => 'Galego title home',
@@ -20,6 +26,12 @@ return [
         ],
     ],
 
+    // ==================================================================
+    //
+    // Site  menu
+    //
+    // ------------------------------------------------------------------
+
     'menu' => [
         'home' => 'Páxina principal',
         'about' => 'Sobre nós'
@@ -27,7 +39,13 @@ return [
 
     'about' => 'Sobre nós',
 
-    'cookies' => 'Ley de cookies',
+    'cookies' => 'Lei de cookies',
+
+    // ==================================================================
+    //
+    // Cookies advise
+    //
+    // ------------------------------------------------------------------
 
     'cookies_msn' => 'En cumprimento da Lei 34/2002, de Servizos da Sociedade da Información, lembrámoslle que este sitio web utiliza cookies co fin de mellorar os nosos servizos.',
     'cookies_accept' => 'Aceptar',

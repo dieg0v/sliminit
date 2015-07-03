@@ -1,0 +1,34 @@
+.page{
+    >header{
+        padding-top: 1em;
+        margin-bottom: 2em;
+        font-size: 0.875em;
+        ul{
+            list-style-type: none;
+            margin: 0 0 .5em 0;
+            padding: 0;
+        }
+        li{
+            display: inline-block;
+            margin-left: .5em;
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+        @media (--tablet) {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            ul{
+                text-align: right;
+            }
+        }
+    }
+}
+h1{
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 300;
+}

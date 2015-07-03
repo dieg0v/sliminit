@@ -2,7 +2,7 @@
 
 // ==================================================================
 //
-// Atomatic page resolution based on page config file
+// Automatic page resolution based on page config file
 //
 // ------------------------------------------------------------------
 

@@ -42,7 +42,7 @@ return [
             'view' => 'cookies/en',
         ],
         'gl' => [
-            'route' => '/ley-de-cookies',
+            'route' => '/lei-de-cookies',
             'view' => 'cookies/gl',
         ],
     ],

@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    color: var(--color-main);
+}
+
+a{
+    color: var(--color-link);
+    text-decoration: none;
+    &:hover{
+        color: var(--color-main);
+    }
+}
