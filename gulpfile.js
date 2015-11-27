@@ -6,6 +6,7 @@ var watch = require('gulp-watch');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync').create();
 var runSequence = require('run-sequence');
+var shell = require('gulp-shell')
 
 var proxyServer = "localhost:8889",
     port = 3001;
@@ -32,6 +33,13 @@ function swallowError (error) {
     console.log(error.toString());
     this.emit('end');
 }
+
+/**
+* Defaut task
+*/
+gulp.task('default', ['watch'], shell.task([
+  'php -S 0.0.0.0:8889 -t public'
+]));
 
 /**
 * Watch task
