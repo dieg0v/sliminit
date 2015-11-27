@@ -36,7 +36,7 @@ Via Composer
 
 ``` bash
 $ composer create-project dieg0v/sliminit --prefer-dist
-$ php -S localhost:8889 -t sliminit/public
+$ php -S 0.0.0.0:8889 -t sliminit/public
 ```
 
 Done... go to [http://localhost:8889](http://localhost:8889)
