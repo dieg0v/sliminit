@@ -4,6 +4,11 @@ var uglify = require('gulp-uglify');
 var clean = require('gulp-clean');
 var watch = require('gulp-watch');
 var notify = require('gulp-notify');
+var browserSync = require('browser-sync').create();
+var runSequence = require('run-sequence');
+
+var proxyServer = "localhost:8889",
+    port = 3001;
 
 // GENERIC CSS
 var autoprefixer = require('gulp-autoprefixer');
@@ -17,12 +22,8 @@ var customMedia = require('postcss-custom-media');
 var calc = require("postcss-calc");
 var colorFunction = require("postcss-color-function");
 
-
 // IMAGEMIN
 var imagemin = require('gulp-imagemin');
-
-// LIVERELOAD
-var livereload = require('gulp-livereload');
 
 /**
 * Errors
@@ -32,16 +33,58 @@ function swallowError (error) {
     this.emit('end');
 }
 
-
 /**
 * Watch task
 */
-gulp.task('watch', function () {
-    livereload.listen();
-    gulp.watch('public/static/css/**/*.css', ['css']);
-    gulp.watch('public/static/js/**/*.js', ['js']);
+gulp.task('watch', ['browser-sync'], function () {
+
+    gulp.watch([
+        'public/static/css/**/*.css'
+        ], ['css-build']
+    ).on('change', browserSync.reload);;
+
+    gulp.watch([
+        'public/static/js/**/*.js'
+        ], ['js-build']
+    ).on('change', browserSync.reload);;
+
+    gulp.watch([
+        'app/views/**/*.mustache'
+    ]).on('change', browserSync.reload);
+
 });
 
+gulp.task('js-build', function(callback) {
+  runSequence(
+    'js',
+    callback
+  );
+});
+
+gulp.task('css-build', function(callback) {
+  runSequence(
+    'css',
+    callback
+  );
+});
+
+/**
+* Browser Sync options
+*/
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: proxyServer,
+        port: port,
+        ghostMode: {
+            clicks: true,
+            location: true,
+            forms: true,
+            scroll: true
+        },
+        notify: false,
+        open: true,
+    });
+});
 
 /**
 * Styles task
@@ -73,14 +116,11 @@ gulp.task('css', function () {
         .on('error', swallowError)
         .pipe(minifycss(minOpts))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1'))
-        //.pipe(concat(''+(new Date().getTime())+'.css'))
-        .pipe(concat('min.css'))
+        .pipe(concat(''+(new Date().getTime())+'.css'))
         .pipe(gulp.dest(dest_folder))
         .pipe(notify({message:"Compress css"})
-        .pipe(livereload())
     );
 });
-
 
 /**
 * Concat and minify js
@@ -105,7 +145,6 @@ gulp.task('js', function () {
         .pipe(notify({message:"Compress js"})
     );
 });
-
 
 /**
 * Optimize images with gulp-imagemin
