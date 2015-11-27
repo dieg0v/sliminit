@@ -1,6 +1,7 @@
 # Changelog
 
-## 0.6.1 (released 2015-...-...)
+## 0.6.2 (released 2015-...-...)
+* Add browsersync, remove live reload
 * Added editorconfig
 * Fixed translation and text errors
 * Added basic theme structure
