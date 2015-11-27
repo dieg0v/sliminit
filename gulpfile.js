@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var clean = require('gulp-clean');
 var watch = require('gulp-watch');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync').create();
 var runSequence = require('run-sequence');
 var shell = require('gulp-shell')
+var del = require('del');
 
 var proxyServer = "localhost:8889",
     port = 3001;
@@ -54,7 +54,12 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch([
         'public/static/js/**/*.js'
         ], ['js-build']
-    ).on('change', browserSync.reload);;
+    ).on('change', browserSync.reload);
+
+    gulp.watch([
+        'public/static/media/img/**/*'
+        ], ['images-build']
+    ).on('change', browserSync.reload);
 
     gulp.watch([
         'app/views/**/*.mustache'
@@ -72,6 +77,13 @@ gulp.task('js-build', function(callback) {
 gulp.task('css-build', function(callback) {
   runSequence(
     'css',
+    callback
+  );
+});
+
+gulp.task('images-build', function(callback) {
+  runSequence(
+    'images',
     callback
   );
 });
@@ -102,10 +114,9 @@ gulp.task('css', function () {
     var dest_folder = 'public/static/build/css';
 
     var src = [];
-
     src.push('public/static/css/main.css');
 
-    gulp.src(dest_folder + '/*', {read: false}).pipe(clean({force: true}));
+    del(dest_folder + '/**/*');
 
     var minOpts = {processImport:false, keepSpecialComments:false};
 
@@ -137,10 +148,9 @@ gulp.task('js', function () {
 
     var dest_folder = 'public/static/build/js';
 
-    gulp.src(dest_folder + '/*', {read: false}).pipe(clean({force: true}));
+    del(dest_folder + '/**/*');
 
     var src = [];
-
     src.push('public/static/vendor/modernizr/modernizr.js');
     src.push('public/static/vendor/jquery/dist/jquery.min.js');
     src.push('public/static/js/site.js');
@@ -159,8 +169,7 @@ gulp.task('js', function () {
 */
 // Delete build images directory
 gulp.task('cleanimages', function() {
-    return gulp.src('public/static/build/media/img')
-    .pipe(clean());
+    return del('public/static/build/media/img/**/*');
 });
 
 gulp.task('images',['cleanimages'], function () {
