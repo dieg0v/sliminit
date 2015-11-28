@@ -1,6 +1,7 @@
 # Changelog
 
-## 0.6.2 (released 2015-...-...)
+## 0.7.0 (released 2015-11-28)
+* Add js.json file for js dependencies
 * Add browsersync, remove live reload
 * Added editorconfig
 * Fixed translation and text errors

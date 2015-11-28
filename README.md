@@ -15,6 +15,7 @@ Simple [slim](https://github.com/slimphp/Slim) app for rapid prototype with:
 - [gulp](https://github.com/gulpjs/gulp)
 - [postcss](https://github.com/postcss/postcss)
 - [flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid)
+- [browsersync](http://www.browsersync.io)
 
 ## Requirements
 
@@ -54,7 +55,15 @@ Js and Css on **public/static/js/site.js** and **public/static/css/main.css** ar
 $ gulp watch
 ```
 
-Manage your views on **app/views** and routes on **app/routes.php**
+If you want run php built-in server, browsersync and watch js/css/mustache files changes, use default gulp task:
+
+``` bash
+$ gulp
+```
+
+## Howto
+
+Manage your pages on **app/config/pages.php**
 
 ## Testing
 
