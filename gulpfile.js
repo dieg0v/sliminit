@@ -7,6 +7,7 @@ var browserSync = require('browser-sync').create();
 var runSequence = require('run-sequence');
 var shell = require('gulp-shell')
 var del = require('del');
+var fs = require('fs');
 
 var proxyServer = "localhost:8889",
     port = 3001;
@@ -52,7 +53,8 @@ gulp.task('watch', ['browser-sync'], function () {
     ).on('change', browserSync.reload);;
 
     gulp.watch([
-        'public/static/js/**/*.js'
+        'public/static/js/**/*.js',
+        'public/static/js/**/*.json'
         ], ['js-build']
     ).on('change', browserSync.reload);
 
@@ -147,13 +149,15 @@ gulp.task('css', function () {
 gulp.task('js', function () {
 
     var dest_folder = 'public/static/build/js';
+    var vendorJs = JSON.parse(fs.readFileSync('./public/static/js/vendor.json'));
+    var src = [];
 
     del(dest_folder + '/**/*');
 
-    var src = [];
-    src.push('public/static/vendor/modernizr/modernizr.js');
-    src.push('public/static/vendor/jquery/dist/jquery.min.js');
-    src.push('public/static/js/site.js');
+    for(var item in vendorJs.js) {
+        console.log(vendorJs.js[item].src);
+        src.push(vendorJs.js[item].src);
+    }
 
     return gulp.src(src)
         .pipe(concat(''+(new Date().getTime())+'.js'))

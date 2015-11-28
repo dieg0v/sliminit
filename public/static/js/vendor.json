@@ -1,0 +1,7 @@
+{
+   "js" : [
+        { "src" : "public/static/vendor/modernizr/modernizr.js" },
+        { "src" : "public/static/vendor/jquery/dist/jquery.min.js" },
+        { "src" : "public/static/js/site.js" }
+    ]
+}
