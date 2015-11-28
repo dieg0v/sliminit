@@ -9,4 +9,4 @@ modules:
     enabled: [PhpBrowser, Filesystem, FunctionalHelper]
     config:
         PhpBrowser:
-            url: 'http://127.0.0.1:8889'
+            url: 'http://localhost:8889'
