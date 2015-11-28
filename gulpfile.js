@@ -149,7 +149,7 @@ gulp.task('css', function () {
 gulp.task('js', function () {
 
     var dest_folder = 'public/static/build/js';
-    var vendorJs = JSON.parse(fs.readFileSync('./public/static/js/vendor.json'));
+    var vendorJs = JSON.parse(fs.readFileSync('./public/static/js/js.json'));
     var src = [];
 
     del(dest_folder + '/**/*');
