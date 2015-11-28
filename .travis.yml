@@ -10,7 +10,7 @@ install:
  - composer install
 
 before_script:
-  - php -S localhost:8889 -t public &
+  - php -S 0.0.0.0:8889 -t public &
 
 script:
   - php vendor/bin/codecept run
