@@ -1,33 +1,20 @@
-.wrapper,
-.wrapper-desktop,
-.wrapper-narrow {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    display: block;
-    margin: 0 auto;
-
-    @media (--mobile) {
-        padding-left: 1rem;
-        padding-right: 1rem;
+.page {
+    padding-top: 8em;
+    @media (--tablet) {
+        padding-top: 6em;
     }
+}
+
+@define-mixin wrapper {
+
+    lost-center: 100% 15px Flex;
 
     @media (--tablet) {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-
-    @media (--desktop) {
-        padding-left: 6rem;
-        padding-right: 6rem;
+        lost-center: 100% 65px Flex;
     }
 }
 
-/* Normal wrapper */
-.wrapper-desktop{
-    max-width: var(--wraper-desktop);
-}
+@define-mixin wrapper-narrow {
 
-/* mini wrapper  */
-.wrapper-narrow{
-    max-width: var(--wraper-narrow);
+    lost-center: var(--wraper-narrow) 1rem;
 }

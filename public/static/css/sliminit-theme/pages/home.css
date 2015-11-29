@@ -1,4 +1,30 @@
-.home{
-    margin-bottom: 2em;
-    text-align: center;
+.home {
+
+    lost-center: 100% 20px;
+
+    img {
+
+        margin-bottom: 20px;
+        lost-column: 4/4;
+
+        @media (--mobile-landscape) {
+
+            lost-column: 1/2;
+
+            &:nth-child(2) {
+                lost-column: 1/1;
+            }
+
+        }
+
+        @media (--tablet) {
+
+            lost-column:1/4;
+
+            &:nth-child(2) {
+                lost-column: 1/4;
+            }
+
+        }
+    }
 }

@@ -1,8 +1,26 @@
-.page{
-    >header{
+.page {
+
+    >header {
+
+        @mixin wrapper;
+
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        background-color:#f5f5f5;
+        top: 0;
         padding-top: 1em;
-        margin-bottom: 2em;
+        padding-bottom: 0.5em;
         font-size: 0.875em;
+        box-shadow: 0px 1px 1px #f9f9f9;
+
         ul{
             list-style-type: none;
             margin: 0 0 .5em 0;
@@ -15,20 +33,16 @@
                 margin-left: 0;
             }
         }
-        @media (--tablet) {
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        @media (--tablet) {
+            h1{
+                lost-column:1/2;
+            }
             ul{
                 text-align: right;
             }
         }
     }
+
 }
-h1{
-    font-size: 3em;
-    text-transform: uppercase;
-    margin: 0;
-    font-weight: 300;
-}
+
