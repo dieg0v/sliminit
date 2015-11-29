@@ -23,6 +23,8 @@ var customProperties = require("postcss-custom-properties");
 var customMedia = require('postcss-custom-media');
 var calc = require("postcss-calc");
 var colorFunction = require("postcss-color-function");
+// GRID
+var lost = require('lost');
 
 // IMAGEMIN
 var imagemin = require('gulp-imagemin');
@@ -129,7 +131,8 @@ gulp.task('css', function () {
         customProperties(),
         customMedia(),
         calc(),
-        colorFunction()
+        colorFunction(),
+        lost
     ];
 
     return gulp.src(src)

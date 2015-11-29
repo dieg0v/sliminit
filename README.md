@@ -14,7 +14,7 @@ Simple [slim](https://github.com/slimphp/Slim) app for rapid prototype with:
 - [illuminate/database](https://github.com/illuminate/database)
 - [gulp](https://github.com/gulpjs/gulp)
 - [postcss](https://github.com/postcss/postcss)
-- [flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid)
+- [lost](https://github.com/corysimmons/lost)
 - [browsersync](http://www.browsersync.io)
 
 ## Requirements

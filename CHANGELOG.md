@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.7.1 (released 201.-...-..)
+* Add lost, remove flexboxgrid
+
 ## 0.7.0 (released 2015-11-28)
 * Add js.json file for js dependencies
 * Add browsersync, remove live reload
