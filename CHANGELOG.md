@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.7.1 (released 201.-...-..)
+## 0.7.5 (released 2015-11-30)
 * Add lost, remove flexboxgrid
 
 ## 0.7.0 (released 2015-11-28)
